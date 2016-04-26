@@ -31,6 +31,10 @@ set(BUILD_OBJECT_LIBRARY_ONLY OFF BOOL)
 
 add_definitions( -DOPENSSL_NO_ASM )
 
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}" )
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/.." )
+include_directories("${CMAKE_CURRENT_BINARY_DIR}/crypto" )
+
 if( WIN32 AND NOT CYGWIN )
   add_definitions( -DOPENSSL_SYSNAME_WIN32 )
   add_definitions( -DWIN32_LEAN_AND_MEAN )
